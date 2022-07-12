@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 
 // Actions
-const ADDED_BOOK = 'ADDED_BOOK';
-const REMOVED_BOOK = 'REMOVED_BOOK';
+const ADDED_BOOK = 'bookstore/books/ADDED_BOOK';
+const REMOVED_BOOK = 'bookstore/books/REMOVED_BOOK';
 
 // Action creators
 const addBook = (title, author) => ({

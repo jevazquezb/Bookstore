@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Bookstore: initialize project with components
+# Bookstore: add reducers and actions
 
-> In this part of the project, we laid foundations for our Bookstore website. Also, we set up routing and added components to build the books and the categories sections.
+> In this part of the project, we configured our Redux Store and wrote *actions* and *reducers* for adding and removing books.
 
 ## Built With
 

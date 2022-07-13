@@ -1,32 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import App from './App';
 import './index.css';
-
-// const bookArray = [
-//   {
-//     title: 'The Hunger Games',
-//     author: 'Suzanne Collins',
-//     id: 1,
-//   },
-//   {
-//     title: 'Dune',
-//     author: 'Frank Herbert',
-//     id: 2,
-//   },
-//   {
-//     title: 'Capital in the Twenty-First Century',
-//     author: 'Thomas Piketty',
-//     id: 3,
-//   },
-// ];
+import store from './redux/configureStore';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
-      <App books={bookArray} />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
   </React.StrictMode>,
 );

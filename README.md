@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Bookstore: add reducers and actions
+# Bookstore: Use Redux in React components
 
-> In this part of the project, we configured our Redux Store and wrote *actions* and *reducers* for adding and removing books.
+> In this part of the project, we used Redux store to display books. Also, we added some UI elements to our components and made them *dispatch* actions.
 
 ## Built With
 

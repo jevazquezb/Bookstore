@@ -1,20 +1,40 @@
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addBook, removeBook } from '../redux/books/books';
 
-function Book({ book }) {
-  const { title, author } = book;
+function Book({ book, removeBookHandler }) {
+  const { title, author, id } = book;
+
   return (
     <li>
       <h3>{ title }</h3>
       <h3>{ author }</h3>
-      <button type="button">Remove</button>
+      <button
+        type="button"
+        onClick={() => removeBookHandler(id)}
+      >
+        Remove
+      </button>
     </li>
   );
 }
 
-function BookList({ books }) {
+function BookList() {
+  const dispatch = useDispatch();
+
+  const removeBookHandler = (id) => {
+    dispatch(removeBook(id));
+  };
+
   const createList = () => {
+    const books = useSelector((state) => state.books);
     const list = books.map((book) => (
-      <Book book={book} key={book.id} />
+      <Book
+        removeBookHandler={removeBookHandler}
+        book={book}
+        key={book.id}
+      />
     ));
     return list;
   };
@@ -29,49 +49,64 @@ function BookList({ books }) {
 }
 
 function Form() {
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+
+  const dispatch = useDispatch();
+
+  const addBookhandler = (e) => {
+    e.preventDefault();
+    dispatch(addBook(title, author));
+    e.target.reset();
+  };
+
+  const resetForm = () => {
+    setTitle('');
+    setAuthor('');
+  };
+
   return (
     <>
       <h2>ADD NEW BOOK</h2>
-      <form>
-        <input type="text" placeholder="Book title" />
-        <input type="text" placeholder="Author" />
-        <input type="submit" value="ADD BOOK" title="Click this or press enter to submit" />
+      <form onSubmit={addBookhandler} onReset={resetForm}>
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Book title"
+        />
+        <input
+          type="text"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+          placeholder="Author"
+        />
+        <input
+          type="submit"
+          value="ADD BOOK"
+          title="Click this or press enter to submit"
+        />
       </form>
     </>
   );
 }
 
-function Books({ books }) {
+function Books() {
   return (
     <>
-      <BookList books={books} />
+      <BookList />
       <Form />
     </>
   );
 }
 
-Books.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string,
-    author: PropTypes.string,
-    id: PropTypes.number,
-  })).isRequired,
-};
-
-BookList.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string,
-    author: PropTypes.string,
-    id: PropTypes.number,
-  })).isRequired,
-};
-
 Book.propTypes = {
   book: PropTypes.shape({
     title: PropTypes.string,
     author: PropTypes.string,
-    id: PropTypes.number,
+    id: PropTypes.string,
   }).isRequired,
+  removeBookHandler: PropTypes.func.isRequired,
 };
 
 export default Books;

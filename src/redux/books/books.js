@@ -9,7 +9,7 @@ const addBook = (title, author) => ({
   type: ADDED_BOOK,
   title,
   author,
-  id: uuidv4,
+  id: uuidv4(),
 });
 
 const removeBook = (id) => ({
@@ -18,7 +18,23 @@ const removeBook = (id) => ({
 });
 
 // Set initial state
-const initialState = [];
+const initialState = [
+  {
+    title: 'The Hunger Games',
+    author: 'Suzanne Collins',
+    id: uuidv4(),
+  },
+  {
+    title: 'Dune',
+    author: 'Frank Herbert',
+    id: uuidv4(),
+  },
+  {
+    title: 'Capital in the Twenty-First Century',
+    author: 'Thomas Piketty',
+    id: uuidv4(),
+  },
+];
 
 // Reducer
 const booksReducer = (state = initialState, action) => {

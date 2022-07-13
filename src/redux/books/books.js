@@ -18,7 +18,23 @@ const removeBook = (id) => ({
 });
 
 // Set initial state
-const initialState = [];
+const initialState = [
+  {
+    title: 'The Hunger Games',
+    author: 'Suzanne Collins',
+    id: 1,
+  },
+  {
+    title: 'Dune',
+    author: 'Frank Herbert',
+    id: 2,
+  },
+  {
+    title: 'Capital in the Twenty-First Century',
+    author: 'Thomas Piketty',
+    id: 3,
+  },
+];
 
 // Reducer
 const booksReducer = (state = initialState, action) => {

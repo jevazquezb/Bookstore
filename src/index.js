@@ -5,6 +5,10 @@ import { Provider } from 'react-redux';
 import App from './App';
 import './index.css';
 import store from './redux/configureStore';
+import newApi from './components/new_api';
+
+const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
+newApi(baseUrl);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

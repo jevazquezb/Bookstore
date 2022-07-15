@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Bookstore: Use Redux in React components
+# Bookstore: connect to API
 
-> In this part of the project, we used Redux store to display books. Also, we added some UI elements to our components and made them *dispatch* actions.
+> In this part of the project, we connected our React-Redux application to an existing API to create and remove books in a remote server.
 
 ## Built With
 

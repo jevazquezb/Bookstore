@@ -1,7 +1,8 @@
+import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addBook, removeBook } from '../redux/books/books';
+import { addBookAsync, removeBookAsync, getBookAsync } from '../redux/api/api';
 
 function Book({ book, removeBookHandler }) {
   const { title, author, id } = book;
@@ -23,8 +24,13 @@ function Book({ book, removeBookHandler }) {
 function BookList() {
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    const arr = [];
+    dispatch(getBookAsync(arr));
+  }, []);
+
   const removeBookHandler = (id) => {
-    dispatch(removeBook(id));
+    dispatch(removeBookAsync(id));
   };
 
   const createList = () => {
@@ -56,8 +62,17 @@ function Form() {
 
   const addBookhandler = (e) => {
     e.preventDefault();
-    dispatch(addBook(title, author));
-    e.target.reset();
+
+    if (title !== '' && author !== '') {
+      const book = {
+        item_id: uuidv4(),
+        title,
+        author,
+        category: 'Fiction',
+      };
+      dispatch(addBookAsync(book));
+      e.target.reset();
+    }
   };
 
   const resetForm = () => {

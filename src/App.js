@@ -6,7 +6,7 @@ import Categories from './components/categories';
 
 function App() {
   return (
-    <>
+    <div className="main-cont">
       <Header />
       <main>
         <Routes>
@@ -14,7 +14,7 @@ function App() {
           <Route path="/categories" element={<Categories />} />
         </Routes>
       </main>
-    </>
+    </div>
   );
 }
 

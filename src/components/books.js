@@ -5,18 +5,44 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addBookAsync, removeBookAsync, getBookAsync } from '../redux/api/api';
 
 function Book({ book, removeBookHandler }) {
-  const { title, author, id } = book;
+  const {
+    title, author, id, category,
+  } = book;
 
   return (
     <li>
-      <h3>{ title }</h3>
-      <h3>{ author }</h3>
-      <button
-        type="button"
-        onClick={() => removeBookHandler(id)}
-      >
-        Remove
-      </button>
+      <div className="info-name">
+        <h3 className="category">{ category }</h3>
+        <h3 className="title">{ title }</h3>
+        <h3 className="auth">{ author }</h3>
+        <button className="auth btn first-btn" type="button">Comments</button>
+        <button
+          className="auth btn"
+          type="button"
+          onClick={() => removeBookHandler(id)}
+        >
+          Remove
+        </button>
+        <button className="auth btn" type="button">Edit</button>
+      </div>
+      <div className="percentage">
+        <div className="ring">
+          <svg>
+            <circle cx="50%" cy="50%" r="33" />
+            <circle cx="50%" cy="50%" r="33" />
+          </svg>
+        </div>
+        <div>
+          <h3 className="amount">64%</h3>
+          <h3 className="completed">Completed</h3>
+        </div>
+      </div>
+      <div className="vl" />
+      <div className="progress">
+        <h3 className="cur-chapter">CURRENT CHAPTER</h3>
+        <h3 className="chapter">Chapter 17</h3>
+        <button className="update-btn" type="button">UPDATE PROGRESS</button>
+      </div>
     </li>
   );
 }
@@ -46,11 +72,12 @@ function BookList() {
   };
 
   return (
-    <div>
+    <>
       <ul>
         { createList() }
       </ul>
-    </div>
+      <div className="hl" />
+    </>
   );
 }
 
@@ -82,21 +109,24 @@ function Form() {
 
   return (
     <>
-      <h2>ADD NEW BOOK</h2>
+      <h2 className="form-title">ADD NEW BOOK</h2>
       <form onSubmit={addBookhandler} onReset={resetForm}>
         <input
+          className="title-input"
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Book title"
         />
         <input
+          className="title-input author-input"
           type="text"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
           placeholder="Author"
         />
         <input
+          className="update-btn add-btn"
           type="submit"
           value="ADD BOOK"
           title="Click this or press enter to submit"
@@ -120,6 +150,7 @@ Book.propTypes = {
     title: PropTypes.string,
     author: PropTypes.string,
     id: PropTypes.string,
+    category: PropTypes.string,
   }).isRequired,
   removeBookHandler: PropTypes.func.isRequired,
 };

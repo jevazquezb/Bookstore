@@ -1,0 +1,45 @@
+.form-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  color: #888888;
+  margin-bottom: 1.2rem;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10rem;
+}
+
+.title-input {
+  width: 35vw;
+  padding: 0.8rem 1.063vw;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  letter-spacing: -0.15px;
+}
+
+.title-input::placeholder {
+  color: #c4c4c4;
+}
+
+.title-input:focus {
+  outline: 1px solid #0290ff;
+}
+
+.author-input {
+  width: 17.813vw;
+}
+
+.add-btn {
+  width: 11.5rem;
+  height: 2.7rem;
+  padding: 0 1.4vw;
+  font-weight: bold;
+  color: rgb(255, 255, 255, 1);
+}

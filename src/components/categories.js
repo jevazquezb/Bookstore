@@ -12,12 +12,13 @@ function Categories() {
   return (
     <>
       <button
+        className="update-btn add-btn cat-btn"
         type="button"
         onClick={categoriesHandler}
       >
-        Check status
+        CHECK STATUS
       </button>
-      <p>{categories[0]}</p>
+      <p className="cat-p">{categories[0]}</p>
     </>
   );
 }

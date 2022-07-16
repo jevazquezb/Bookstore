@@ -103,8 +103,6 @@ svg circle:nth-child(1) {
 
 svg circle:nth-child(2) {
   stroke-dashoffset: calc(440 - (207 * 64) / 100);
-
-  /* stroke: linear-gradient(to bottom, #307bbe, #379cf6);   */
   stroke: #379cf6;
 }
 

@@ -62,13 +62,13 @@ li {
   padding-left: 0;
 }
 
+.btn:hover {
+  cursor: pointer;
+}
+
 .info-name .btn:nth-child(odd) {
   border-left: 1px solid #e8e8e8;
   border-right: 1px solid #e8e8e8;
-}
-
-.btn:hover {
-  cursor: pointer;
 }
 
 .percentage {
@@ -85,7 +85,7 @@ li {
 
 svg {
   width: 5.6rem;
-  height: 5.6rem;  
+  height: 5.6rem;
 }
 
 svg circle {
@@ -103,6 +103,7 @@ svg circle:nth-child(1) {
 
 svg circle:nth-child(2) {
   stroke-dashoffset: calc(440 - (207 * 64) / 100);
+
   /* stroke: linear-gradient(to bottom, #307bbe, #379cf6);   */
   stroke: #379cf6;
 }
@@ -169,4 +170,3 @@ svg circle:nth-child(2) {
   border-top: solid 1px #e8e8e8;
   margin-bottom: 1.813rem;
 }
-

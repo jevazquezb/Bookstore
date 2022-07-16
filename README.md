@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Bookstore: connect to API
+# Bookstore
 
-> In this part of the project, we connected our React-Redux application to an existing API to create and remove books in a remote server.
+> This is an app that allows the user to add books to a list and remove them.
 
 ## Built With
 

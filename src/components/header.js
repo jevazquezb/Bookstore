@@ -4,11 +4,10 @@ import user from '../images/user.png';
 function Header() {
   return (
     <header>
-      <h1>Bookstore CMS</h1>
       <nav>
-        <NavLink to="/">BOOKS</NavLink>
-        <br />
-        <NavLink to="categories">CATEGORIES</NavLink>
+        <NavLink className="main-title" to="/">Bookstore CMS</NavLink>
+        <NavLink className="menu" to="/">BOOKS</NavLink>
+        <NavLink className="menu" to="categories">CATEGORIES</NavLink>
       </nav>
       <div>
         <img src={user} alt="user icon" title="Log in" />

@@ -5,18 +5,19 @@ header {
   padding: 1.7rem 6.25vw;
 }
 
-h1 {
-  font-size: 1.875rem;
-  font-weight: bold;
-  color: #0290ff;
-}
-
 nav {
   display: flex;
   align-items: center;
 }
 
-a {
+.main-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #0290ff;
+  text-decoration: none;
+}
+
+.menu {
   font-size: 0.813rem;
   letter-spacing: 1.9px;
   text-decoration: none;
@@ -42,6 +43,6 @@ header img {
   height: 1.2rem;
 }
 
-header a.active {
+.active {
   opacity: 1;
 }

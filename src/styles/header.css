@@ -1,0 +1,47 @@
+header {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 1.7rem 6.25vw;
+}
+
+h1 {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #0290ff;  
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+  text-decoration: none;
+  color: #121212;
+  opacity: 0.5;
+  margin-left: 2.5vw;
+}
+
+header div {
+  width: 2.6rem;
+  height: 2.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #e8e8e8;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+header img {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+header a.active {
+  opacity: 1;
+}

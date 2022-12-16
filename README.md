@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-*Coming soon.*
+[Live demo link](https://bookstore-javb.netlify.app/).
 
 ## Getting Started
 
